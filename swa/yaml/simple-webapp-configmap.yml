@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  APP_USER: Louie
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-09-12T17:10:09Z"
+  name: webapp-user
+  namespace: swa
+  resourceVersion: "2099"
+  uid: 88614bd5-c1b2-4da7-bad7-01e49d6054d9
