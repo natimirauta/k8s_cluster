@@ -1,0 +1,12 @@
+SWA:
+  Port: 80
+  Image: ghcr.io/natimirauta/simple_web_app
+  ImageTag: main
+  Replicas: 2
+
+Redis:
+  Port: 6379
+  Image: redis
+  ImageTag: latest
+  Replicas: 1
+  VCStorage: 100Mi

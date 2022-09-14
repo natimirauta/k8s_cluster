@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: simple-webapp
+spec:
+  replicas: {{ .Values.SWA.Replicas }}
+  selector:
+    matchLabels:
+      app: simple-webapp
+  template:
+    metadata:
+      labels:
+        app: simple-webapp
+    spec:
+      containers:
+      - name: simple-webapp
+        image: {{ .Values.SWA.Image }}:{{ .Values.SWA.ImageTag }}
+        ports:
+        - containerPort: {{ .Values.SWA.Port }}
+        env:
+        - name: APP_USER
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-user
+              key: APP_USER
