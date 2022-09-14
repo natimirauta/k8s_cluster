@@ -1,0 +1,7 @@
+releases:
+  - name: simple-webapp
+    namespace: swa
+    createNamespace: true
+    chart: ./swa/chart/simple-webapp
+    values:
+    - swa/chart/simple-webapp/values.yaml
