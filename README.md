@@ -20,8 +20,6 @@ The helm chart will deploy both the application and the ingress in the same name
 
 With the `helmfile` tool, it could be possible for the ingress and the application to be deployed in separate namespaces.
 
-However, the `ingress-nginx` dependency under `swa/chart/Chart.yaml` will need to be removed and specified in `helmfile.yml` instead (with the aforementioned config to have separate namespaces). If not, `ingress-nginx` will be deployed twice: once in the application's namespace and once in the namespaces specified in `helmfile.yml`.
-
 First, install the `helm-diff` plugin with:
 
 >helm plugin install https://github.com/databus23/helm-diff
